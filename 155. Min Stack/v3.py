@@ -1,5 +1,3 @@
-from collections import deque
-
 # Notes
 # Tricky part: '<=' sign: because min values should be repeated
 # For instance, when inserting these values: [0, 5, 8, 5]
@@ -13,8 +11,8 @@ from collections import deque
 class MinStack:
 
     def __init__(self):
-        self.stack = deque()
-        self.min_stack = deque()
+        self.stack = []
+        self.min_stack = []
 
     def push(self, val: int) -> None:
         self.stack.append(val)

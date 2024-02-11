@@ -1,28 +1,26 @@
-from collections import deque
-
 # Naive approach (pop is not O(1))
 class MinStack:
 
     def __init__(self):
         self.min = 0
-        self.deque = deque()
+        self.stack = []
 
     def push(self, val: int) -> None:
-        if not self.deque or val < self.min:
+        if not self.stack or val < self.min:
             self.min = val
-        self.deque.append(val)
+        self.stack.append(val)
 
     def pop(self) -> None:
-        popped = self.deque.pop()
-        if popped == self.min and self.deque:
-            new_min = self.deque[0]
-            for v in self.deque:
+        popped = self.stack.pop()
+        if popped == self.min and self.stack:
+            new_min = self.stack[0]
+            for v in self.stack:
                 if v < new_min:
                     new_min = v
             self.min = new_min
 
     def top(self) -> int:
-        return self.deque[-1]
+        return self.stack[-1]
 
     def getMin(self) -> int:
         return self.min

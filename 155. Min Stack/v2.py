@@ -1,10 +1,8 @@
-from collections import deque
-
 # Better approach: using tuples (value, current_minimum)
 class MinStack:
 
     def __init__(self):
-        self.stack = deque()
+        self.stack = []
 
     def push(self, val: int) -> None:
         current_min = val if not self.stack else min(val, self.getMin())
