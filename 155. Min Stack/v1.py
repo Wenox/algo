@@ -1,3 +1,4 @@
+# Revisit: 2
 # Naive approach (pop is not O(1))
 class MinStack:
 

@@ -1,3 +1,4 @@
+# Revisit: 2
 from math import comb
 from typing import List
 
