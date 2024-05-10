@@ -1,4 +1,3 @@
-# Revisit: 2
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         # construct letters_count map
