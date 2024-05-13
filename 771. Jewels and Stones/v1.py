@@ -1,4 +1,4 @@
-# Revisit: 1
+# Revisit: 1 [1]
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
         jewels = set(jewels)

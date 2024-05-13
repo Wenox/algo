@@ -1,13 +1,14 @@
-# Revisit: 1
+# Revisit: 1 [1]
 from typing import List
 
 
 class Solution:
     def finalValueAfterOperations(self, operations: List[str]) -> int:
-        x = 0
+        X = 0
         for oper in operations:
-            if oper[0] == '+' or oper[2] == '+':
-                x += 1
+            if oper[1] == '+':
+                X += 1
             else:
-                x -= 1
-        return x
+                X -= 1
+        return X
+
