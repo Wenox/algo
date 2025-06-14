@@ -1,4 +1,3 @@
-# Revisit: 1 [1] {2}
 from collections import defaultdict
 
 

@@ -1,4 +1,5 @@
-# Revisit: 2
+# Revisit: 2 – 13/02/2024
+# Revisit: 2 – 10/06/2025
 class Solution:
     def numberOfSteps(self, num: int) -> int:
         steps = 0

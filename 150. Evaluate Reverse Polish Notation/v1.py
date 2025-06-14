@@ -1,4 +1,5 @@
-# Revisit: 2
+# Revisit: 2 – 11/02/2025
+# Revisit: 2 – 13/06/2025
 # Notes
 # Tricky part: task says "division towards zero"
 # But in Python:
@@ -11,7 +12,7 @@ class Solution:
         operations = {
             "+": lambda a, b: a + b,
             "-": lambda a, b: a - b,
-            "/": lambda a, b: int(a / b),
+            "/": lambda a, b: int(a / b), # truncate division towards zero!
             "*": lambda a, b: a * b
         }
 
@@ -19,10 +20,10 @@ class Solution:
 
         for token in tokens:
             if token in operations:
-                op2 = stack.pop()
-                op1 = stack.pop()
+                op2, op1 = stack.pop(), stack.pop()
                 v = operations[token](op1, op2)
                 stack.append(v)
             else:
                 stack.append(int(token))
+
         return stack.pop()

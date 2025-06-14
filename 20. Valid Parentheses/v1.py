@@ -1,4 +1,5 @@
-# Revisit: 3
+# Revisit: 3 – 11/02/2025
+# Revisit: 2 – 11/06/2025
 class Solution:
     def isValid(self, s: str) -> bool:
         brackets = {')': '(', '}': '{', ']': '['}
