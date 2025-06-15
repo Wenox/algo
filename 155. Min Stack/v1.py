@@ -1,4 +1,5 @@
-# Revisit: 2
+# Revisit: 2 –– 11/02/2025
+# Revisit: 2 –– 14/06/2025
 # Naive approach (pop is not O(1))
 class MinStack:
 

@@ -1,5 +1,5 @@
-# Revisit: 1 [1]
+# Revisit: 1 – 11/02/2024
+# Revisit: 2 – 14/06/2025
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        jewels = set(jewels)
-        return sum(c in jewels for c in stones)
+        return sum(stone in set(jewels) for stone in stones)

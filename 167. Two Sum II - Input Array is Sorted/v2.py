@@ -1,4 +1,3 @@
-# Revisit: 2
 from typing import List
 
 # Note: you must see that L and R will never cross
