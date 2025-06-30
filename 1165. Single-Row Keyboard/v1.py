@@ -1,14 +1,13 @@
+# Revisit: 2 –– 30/06/2025
+
 class Solution:
     def calculateTime(self, keyboard: str, word: str) -> int:
-        key_to_index = {}
-        for i in range(len(keyboard)):
-            key_to_index[keyboard[i]] = i
+        keyboardMap = {key: index for index, key in enumerate(keyboard)}
 
-        time = 0
-        curr_index = 0
+        total, curr_index = 0, 0
         for c in word:
-            new_index = key_to_index[c]
-            time += abs(curr_index - new_index)
-            curr_index = new_index
+            target_index = keyboardMap[c]
+            total += abs(target_index - curr_index)
+            curr_index = target_index
 
-        return time
+        return total

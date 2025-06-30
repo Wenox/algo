@@ -1,24 +1,23 @@
-# Revisit: 2
+# Revisit: 2 –– 12/02/2024
+# Revisit: 2 –– 15/06/2025
 from typing import List
 
 
-# Notes: in python no need to use "temp" for swap
-# x, y = y, x
-# Also, arr[~i] = arr[-1-i] = arr[n - i - i]
 class Solution:
     def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
-        n = len(image)
         for row in image:
-            l = 0
-            r = n - 1
-            while l <= r:
-                if l < r:
-                    row[l], row[r] = row[r] ^ 1, 1 - row[l]  ## Two ways to toggle a value: 1 - x or XOR
-                elif l == r:
-                    row[l] ^= 1
-                l += 1
-                r -= 1
+            left, right = 0, len(row) - 1
+            while left <= right:
+                if left == right:
+                    row[left] ^= 1
+                    #row[left] = 1 - row[left] # another method to TOGGLE 1<->0
+                else:
+                    row[left], row[right] = row[right] ^ 1, row[left] ^ 1
+                left += 1
+                right -= 1
         return image
+
+
 
 
 

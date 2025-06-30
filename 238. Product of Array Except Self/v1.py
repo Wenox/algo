@@ -1,4 +1,8 @@
-# Revisit: 3
+# Revisit: 3 – 12/02/2024
+# Revisit: 3 – 22/06/2025
+# What if there are 0s in the array?
+# -> If one zero, then 0s and arr[non-zero] = product of others
+# -> If two zeros: everything is 0
 from typing import List
 
 

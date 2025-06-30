@@ -6,7 +6,6 @@ class Solution:
         nums1_copy = nums1[:m]
         p1 = 0
         p2 = 0
-        main = 0
 
         for i in range (m + n):
             if p2 >= n or (p1 < m and nums1_copy[p1] < nums2[p2]):

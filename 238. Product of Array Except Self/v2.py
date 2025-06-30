@@ -4,14 +4,19 @@ from typing import List
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        output = [1] * n
-        output[0] = 1
+        answer = [1] * n
+
+        # Compute prefix products
+        # Input: [1, 2, 3, 4, 5]
+        # Computed: [1, 1, 2, 6, 24]
         for i in range(1, n):
-            output[i] = output[i - 1] * nums[i - 1]
+            answer[i] = nums[i - 1] * answer[i - 1]
 
-        mult = 1
-        for i in reversed(range(n)):
-            output[i] *= mult
-            mult *= nums[i]
+        # Handle suffix products
+        # [120, 60, 40, 30, 24]
+        acc = nums[n - 1]
+        for i in range(n - 2, -1, -1):
+            answer[i] = answer[i] * acc
+            acc = acc * nums[i]
 
-        return output
+        return answer
