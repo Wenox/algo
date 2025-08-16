@@ -1,4 +1,4 @@
-# Revisit: 3
+# Revisit: 2.5 –– 08/08/2025
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         s = str(x)

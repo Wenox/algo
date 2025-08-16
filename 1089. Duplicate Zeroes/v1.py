@@ -1,29 +1,16 @@
-# Revisit: 3
+# Revisit: 3 –– 16/02/2024
+# Revisit: 3 –– 07/08/2025
 from typing import List
 
 
 class Solution:
     def duplicateZeros(self, arr: List[int]) -> None:
-        possible_dups = 0
-        length_ = len(arr) - 1
-
-        for left in range(length_ + 1):
-            if left > length_ - possible_dups:
-                break
-
-            if arr[left] == 0:
-                if left == length_ - possible_dups:
-                    arr[length_] = 0
-                    length_ -= 1
-                    break
-                possible_dups += 1
-
-        last = length_ - possible_dups
-
-        for i in range(last, -1, -1):
+        zeros = arr.count(0)
+        n = len(arr)
+        for i in range(n - 1, -1, -1):
+            if i + zeros < n:
+                arr[i + zeros] = arr[i]
             if arr[i] == 0:
-                arr[i + possible_dups] = 0
-                possible_dups -= 1
-                arr[i + possible_dups] = 0
-            else:
-                arr[i + possible_dups] = arr[i]
+                zeros -= 1
+                if i + zeros < n:
+                    arr[i + zeros] = 0
